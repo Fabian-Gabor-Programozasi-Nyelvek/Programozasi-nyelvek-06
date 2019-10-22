@@ -19,7 +19,7 @@ int main()
     int i=0;
     int jeles_szam=0;
     double atlag=0;
-    int honap [30], max_homerseklet;
+    int honap [30], max_homerseklet, max_homerseklet_nap;
 
     do
         if (jegyek[i++]<=1) bukas = true;
@@ -55,9 +55,13 @@ int main()
     printf("\n");
 
     max_homerseklet = honap[0];
+    max_homerseklet_nap = 0;
     for (i=1; i<30; i++)
-        if (max_homerseklet<honap[i]) max_homerseklet = honap[i];
-    printf("Max homerseklet: %d\n", max_homerseklet);
+        if (max_homerseklet<honap[i]) {
+            max_homerseklet = honap[i];
+            max_homerseklet_nap = i+1;
+        }
+    printf("Max homerseklet: %d 'C a %d napon\n", max_homerseklet, max_homerseklet_nap);
 
     return 0;
 }
